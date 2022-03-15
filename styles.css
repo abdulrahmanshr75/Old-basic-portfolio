@@ -1,0 +1,419 @@
+/* meta */
+* {
+    position: relative;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+
+}
+
+html,body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+content-wrap {
+    margin: 0 auto;
+}
+
+/* navbar */
+
+header {
+     background-color: #e8eddf;
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    max-width: 70%;
+    margin: 0 auto;
+    align-items: center;
+    
+}
+
+ul {
+    padding:0;
+}
+
+li {
+    display: inline-block;
+    padding: 0 20px;
+    font-size: 18px;
+}
+
+li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    position: relative;
+    }
+
+li a:hover {
+        color: #D51635;
+        transition: 500ms;
+    }
+    
+li a::before {
+        content: "";
+        position:absolute;
+        left: 0;
+        top: 100%;
+        height: 4px;
+        width: 0%;
+        background-color: #D51635;
+        transition: 300ms ease-in-out;
+    }
+    
+li a:hover::before {
+        width:100%;
+    }
+    
+
+.logo {
+    width: 110px;
+    height: 110px
+}
+
+.my-toggle {
+    position:absolute;
+    top: 1.5rem;
+    right: 1rem;
+    display: none;
+
+}
+
+/* about */
+.aboutcontent {
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/juanjo-jaramillo-mZnx9429i94-unsplash.jpg);
+    background-size: cover;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about {
+    color: #fff;
+    z-index: 1;
+    text-align: center;
+}
+
+.overlay {
+    background-color: #333;
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    opacity: .7;
+}
+
+.myphoto {
+    z-index: 1;
+    border-radius: 32px;
+    border: solid 4px #fff ;
+    width: 250px;
+}
+
+.myphoto:hover {
+    border: solid 4px #D51635 ;
+    transition: 300ms;
+}
+
+
+/* contact me  */
+.contactcontent {
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #e8eddf ;
+    text-align: center;
+}
+.social { 
+    display: flex;
+    flex-direction: row;
+}
+.gmail {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.gmail:hover {
+    padding: 0;
+    margin: 0;
+    width: 55px;
+    height: 55px;
+    filter: drop-shadow(3px 5px 2px #333);
+    transition: 300ms ease-in-out;
+}
+.messenger {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+.messenger:hover {
+    padding: 0;
+    margin: 0;
+    width: 55px;
+    height: 55px;
+    filter: drop-shadow(3px 5px 2px #333);
+    transition: 300ms ease-in-out;
+}
+.email {
+    color: #D51635;
+}
+
+/* what i do  */
+
+.whatidocontent {
+    height: 100vh;
+    background-color: #e8eddf;
+    border-top: dashed 2px #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.code {
+    color: #D51635;
+}
+
+.languages {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.lang {
+    width: 50px;
+    height: 50px;
+}
+
+.lang:hover {
+    width: 55px;
+    height: 55px;
+    filter: drop-shadow(3px 5px 2px #333);
+    transition: 300ms ease-in-out;   
+}
+/* Resume */
+
+.resumecontent {
+    height: 100vh;
+    background-color: #e8eddf;
+    border-top: dashed 2px #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+
+.button {
+    padding: 15px 29px;
+    background-color: none;
+    border: 3px solid #333;
+    border-radius: 35px;
+    text-decoration: none;
+    color: #333;
+    font-size: 20px;
+    font-weight: bolder;
+    position: relative;
+    overflow: hidden;
+}
+
+.button:hover {
+    color: #fff;
+}
+
+.button::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -20px;
+    right: -20px;
+    background: #D51635;
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transition: 300ms ease-in-out;
+}
+
+.button:hover::before {
+    transform: scale(15);
+}
+
+
+.back-to-top {
+    background: none;
+    position: fixed;
+    bottom: 16px;
+    right: 32px;
+    width: 55px;
+    height: 55px;
+    border: 3px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #333;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: 1s ease-in-out;
+}
+
+
+.back-to-top.active {
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+
+.back-to-top:hover {
+    transition: 300ms ease-in-out;
+    color: #fff;
+    background: #D51635;
+    border: 3px solid #333;
+
+}
+
+mark {
+    background: #D51635;
+    color: #fff     ;
+}
+
+.open {
+    height: 100vh;
+    transition: 300ms ease-in-out;
+}
+
+.hidden {
+    display: none;
+}
+
+@media all and (max-width:720px) {
+
+
+
+
+.container {
+       flex-direction: column;
+       align-items: flex-start;
+   } 
+
+nav {
+       width: 100%;
+       height: 0;
+   }
+
+li {
+       display: block;
+       text-align: center;
+       padding: 12px 0;
+   }
+li a {
+       font-size: 1.4rem;
+   }
+
+.my-toggle {
+       display: block;
+   }
+
+.back-to-top {
+    background: none;
+    position: fixed;
+    bottom: 16px;
+    right: 32px;
+    width: 55px;
+    height: 55px;
+    border: 3px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    color: #333;
+    text-decoration: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: 1s ease-in-out;
+}
+
+
+.back-to-top.active {
+    bottom: 32px;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+
+.back-to-top:hover {
+    transition: 300ms ease-in-out;
+    color: #fff;
+    background: #D51635;
+    border: 3px solid #333;
+
+}
+
+.about {
+    font-size: 22px;
+}
+
+h1 {
+    font-size: 22px;
+}
+
+h2 {
+    font-size: 22px;
+    text-align: center;
+}
+
+}
+
+.typing {
+    position: relative;
+    width: max-content;
+}
+
+.typing::before,.typing::after {
+    content:"";
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position:absolute;
+   
+}
+
+.typing::before{
+    background-color: #e8eddf;
+    animation : typing 4s steps(41) forwards;
+    
+}
+
+.typing::after{
+    background-color: #D51635;
+    width: 6px;
+    animation : typing 4s steps(41) forwards, blink 350ms infinite;
+}
+
+@keyframes typing {
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes blink {
+    to {
+        background : transparent;
+    }
+}
